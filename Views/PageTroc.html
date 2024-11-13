@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Page - General</title>
+    <link rel="stylesheet" href="../main.css" type="text/css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div>
+          <img src="../Ressources/Images/logo.png" height="90" width="100" />
+        </div>
+        <div>
+          <a href="PageAccueil.html">Accueil</a>
+          <a>Logement</a>
+          <a class="active">Troc</a>
+          <a href="PageGeneral.html">Information</a>
+        </div>
+        <div>
+          <a href="PageAuth.html">Connexion</a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="troc-header">
+        <div>
+          <p class="active">Annonces</p>
+          <p>Offres</p>
+        </div>
+      </div>
+
+      <div class="troc-container">
+        <div class="troc-container-search">
+          <form action="." method="post">
+            <label for="typeO">Type d'objet</label>
+            <input type="text" name="typeO" id="typeO" />
+            <label for="typeD">Type de demande</label>
+            <input type="text" name="typeD" id="typeD" />
+            <input type="submit" value="Rechercher" />
+          </form>
+        </div>
+        <div class="troc-container-element">
+          <div class="help-element troc-element">
+            <div>
+              <img
+                src="../Ressources/Images/star.svg"
+                type="text/svg"
+                width="30px"
+                height="30px"
+              />
+              <h2>Titre du troc</h2>
+              <p>dd/mm/yyyy</p>
+              <img
+                src="../Ressources/Images/arrow_down.svg"
+                type="text/svg"
+                width="30px"
+                height="30px"
+                class="plus-icon"
+              />
+            </div>
+            <div class="detail-section">
+              <p><strong>PRIX ESTIME: 00€</strong><br />Description rapide</p>
+              <button>Discuter</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="../Ressources/JS/main.js"></script>
+  </body>
+</html>
