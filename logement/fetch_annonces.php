@@ -2,7 +2,7 @@
 require_once '../admin/database.php';
 $db = Database::connect();
 
-$sort = isset($_GET['sort']) ? $_GET['sort'] : 'prix_asc';  // Trier par défaut (prix_asc)
+$sort = isset($_GET['sort']) ? $_GET['sort'] : 'prix_asc';  
 $type = isset($_GET['type']) && !empty($_GET['type']) ? $_GET['type'] : null;
 $colocation = isset($_GET['colocation']) ? $_GET['colocation'] : null;
 
@@ -19,17 +19,17 @@ switch ($sort) {
     case 'surface_desc':
         $orderBy = 'surface DESC';
         break;
-    case 'proxi_asc':
-        $orderBy = 'proxi ASC';
+    case 'proximite_asc':
+        $orderBy = 'proximite ASC';
         break;
-    case 'proxi_desc':
-        $orderBy = 'proxi DESC';
+    case 'proximite_desc':
+        $orderBy = 'proximite DESC';
         break;
     default:
         $orderBy = 'prix ASC';
 }
 
-$query = "SELECT * FROM m_annonce WHERE 1";
+$query = "SELECT * FROM annonces WHERE 1";
 
 if ($type) {
     $query .= " AND type = :type";
@@ -58,17 +58,24 @@ if (empty($annonces)) {
 } else {
     foreach ($annonces as $annonce) {
         echo '<div class="col-annonce">
-                    <ul>
-                        <li>Nom: ' . htmlspecialchars($annonce['nom']) . '</li>
-                        <li>Type: ' . htmlspecialchars($annonce['type']) . '</li>
-                        <li>Prix: ' . htmlspecialchars($annonce['prix']) . ' €</li>
-                        <li>Surface: ' . htmlspecialchars($annonce['surface']) . ' m²</li>
-                        <li>Colocation: ' . ($annonce['colocation'] === 1 ? 'Oui' : 'Non') . '</li>
-                        <li>Proximité: ' . htmlspecialchars($annonce['proxi']) . '</li>
-                        <li>Propriétaire: ' . htmlspecialchars($annonce['proprietaire']) . '</li>
-                        <li>Contact: ' . htmlspecialchars($annonce['contact']) . '</li>
-                        <li id="telephone">Téléphone: ' . htmlspecialchars($annonce['telephone']) . '</li>
-                    </ul>
+                    <div class="col-left-column">
+                        <ul>
+                            <li>Nom: ' . htmlspecialchars($annonce['nom']) . '</li>
+                            <li>Type: ' . htmlspecialchars($annonce['type']) . '</li>
+                            <li>Prix: ' . htmlspecialchars($annonce['prix']) . ' €</li>
+                            <li>Surface: ' . htmlspecialchars($annonce['surface']) . ' m²</li>
+                            <li>Colocation: ' . ($annonce['colocation'] === 1 ? 'Oui' : 'Non') . '</li>
+                        </ul>
+                    </div>
+                    <div class="col-right-column">
+                        <ul>    
+                            <li>Proximité: ' . htmlspecialchars($annonce['proximite']) . '</li>
+                            <li>Description: <br>' . htmlspecialchars($annonce['description']) . '</li>
+                            <li>Propriétaire: ' . htmlspecialchars($annonce['proprietaire']) . '</li>
+                            <li>Contact: ' . htmlspecialchars($annonce['contact']) . '</li>
+                            <li id="telephone">Téléphone: ' . htmlspecialchars($annonce['telephone']) . '</li>
+                        </ul>
+                    </div>
               </div>';
     }    
 }
