@@ -15,26 +15,23 @@ body {
     background-color: var(--color-background);
 }
 
-.wrapper {
+.align-horizontal {
     display: flex;
-}
-.nav-item{
-    flex: 1;
-    text-align: center;
-    padding: 14px;
+    align-items: center;
+    justify-content: center;
 }
 
-.nav-item-start {
-    border-right: 4px double #000000;
+.align-horizontal > * {
+    padding: 8px;
     flex: 1;
-    min-width: 8%;
-    padding: 28px;
-    text-align: left;
+    text-align: center;
+    min-width: 18%;
 }
-.nav-item-end {
-    border-left: 4px double hsl(0, 0%, 0%);
-    flex: 1;
-    min-width: 8%;
-    padding: 28px;
-    text-align: right;
+
+.nav-item-start > * {
+    text-align: start;
+}
+
+.nav-item-end > * {
+    text-align: end;
 }
