@@ -5,7 +5,20 @@
     <title>Recherche d'annonces</title>
     <link href="../main.css" rel="stylesheet" />
 </head>
-<?php include("../navbar.html"); ?>
+<nav>
+    <div>
+        <img src="../../Ressources/Images/logo.png" height="90" width="100" />
+    </div>
+    <div>
+        <a href="../../PageAccueil.html">Accueil</a>
+        <a>Logement</a>
+        <a href="../../PageTroc.html">Troc</a>
+        <a class="active">Information</a>
+    </div>
+    <div>
+        <a href="../../PageAuth.html">Connexion</a>
+    </div>
+</nav>
 <body>
 
     <div class="row-left">
