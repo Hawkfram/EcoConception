@@ -1,0 +1,12 @@
+.row {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.col {
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #000;
+}
