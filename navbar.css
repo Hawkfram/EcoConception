@@ -1,0 +1,40 @@
+nav {
+    position: fixed;
+    background-color: #8ce07b;
+    width: 100%;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: var(--color-background);
+}
+
+.wrapper {
+    display: flex;
+}
+.nav-item{
+    flex: 1;
+    text-align: center;
+    padding: 14px;
+}
+
+.nav-item-start {
+    border-right: 4px double #000000;
+    flex: 1;
+    min-width: 8%;
+    padding: 28px;
+    text-align: left;
+}
+.nav-item-end {
+    border-left: 4px double hsl(0, 0%, 0%);
+    flex: 1;
+    min-width: 8%;
+    padding: 28px;
+    text-align: right;
+}
