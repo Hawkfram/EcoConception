@@ -16,6 +16,12 @@ body {
     border-radius: 5px;
 }
 
+.col2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
 .col h1 {
     margin-top: 0;
 }
@@ -28,10 +34,29 @@ body {
 .col ul li {
     padding: 5px 0;
     cursor: pointer;
-    color: blue;
+    color: red;
     text-decoration: underline;
 }
 
 .col ul li:hover {
-    color: darkblue;
+    color: black;
+}
+
+.col-nav{
+    text-align: center;
+    background: #fff;
+    border: 1px solid rgb(156, 156, 156);
+    height: 100px; 
+}
+.ul-col-nav{
+    display: inline-block;
+}
+.li-col-nav{
+    font-family: Courier;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 3px;
+    display: inline-block;
+    text-align: center;
+    padding: 20px;
 }
