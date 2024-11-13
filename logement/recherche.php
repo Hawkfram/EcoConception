@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -60,6 +58,7 @@
             <button onclick="fetchMap()">Afficher la carte</button>
         </div>
 
+
         <div class="col2">
             <!-- Colonne Barre -->
             <div class="col-nav">
@@ -75,16 +74,13 @@
 
             <!-- Colonne Infos -->
             <div class="col" id="info-display">
-                <!-- Contenu dynamique ici -->
+                <!-- Contenu dynamique -->
             </div>
         </div>
 
     </div>
 
     <script>
-        let map; // Déclaration de la variable globale pour la carte
-
-        // Fonction pour récupérer les annonces filtrées et afficher les résultats dans #info-display
         function fetchAnnonces() {
             const sortValue = document.getElementById('sort').value;
             const typeValue = document.getElementById('type').value;
@@ -95,15 +91,15 @@
 
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === 4 && xhr.status === 200) {
-                    // Effacer le contenu de la div info-display avant d'ajouter les annonces
                     document.getElementById('info-display').innerHTML = xhr.responseText;
 
-                    // Formater les numéros de téléphone dans le résultat affiché
                     const telephoneElements = document.querySelectorAll('#info-display #telephone');
+
                     telephoneElements.forEach(function(phoneElement) {
                         let telephoneNumber = phoneElement.textContent.split(':')[1].trim();
                         if (telephoneNumber) {
                             let formattedPhone = '+' + telephoneNumber.replace(/(\d{2})(?=\d)/g, '$1 ');
+
                             phoneElement.textContent = 'Téléphone: ' + formattedPhone;
                         }
                     });
@@ -111,8 +107,10 @@
             };
             xhr.send();
         }
+
     </script>
+
+
 
 </body>
 </html>
->>>>>>> dev
