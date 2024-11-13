@@ -5,6 +5,7 @@
     <title>Recherche d'annonces</title>
     <link href="../main.css" rel="stylesheet" />
 </head>
+<?php include("../navbar.html"); ?>
 <body>
 
     <div class="row-left">
@@ -60,8 +61,10 @@
 
             <!-- Colonne Infos -->
             <div class="col" id="info-display">
-
+                
             </div>
+
+            
         </div>
     </div>
 
