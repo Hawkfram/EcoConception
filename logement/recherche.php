@@ -25,9 +25,10 @@
             <label for="type">Type de logement :</label>
             <select id="type">
                 <option value="">Tous</option>
-                <option value="appartement">Appartement</option>
+                <option value="chambre">Chambre</option>
                 <option value="studio">Studio</option>
-                <option value="maison">Maison</option>
+                <option value="appartement">Appartement</option>
+                <option value="résidence étudiante">Résidence étudiante</option>
             </select>
             <br>
             <label for="colocation">Colocation :</label>
@@ -39,13 +40,10 @@
             <br>
 
             <button onclick="fetchAnnonces()">Filtrer</button>
-
-            <div>
-                <h1>Carte interactive de Limoges</h1>
-                <br>
-            </div>
+            <br>
+            <h1>Carte interactive de Limoges</h1>
+            <button onclick="fetchMap()">Afficher la carte</button>
         </div>
-
 
         <div class="col2">
             <!-- Colonne Barre -->
@@ -69,6 +67,9 @@
     </div>
 
     <script>
+        let map; // Déclaration de la variable globale pour la carte
+
+        // Fonction pour récupérer les annonces filtrées et afficher les résultats dans #info-display
         function fetchAnnonces() {
             const sortValue = document.getElementById('sort').value;
             const typeValue = document.getElementById('type').value;
@@ -79,27 +80,23 @@
 
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Effacer le contenu de la div info-display avant d'ajouter les annonces
                     document.getElementById('info-display').innerHTML = xhr.responseText;
 
-                    const phoneElements = document.querySelectorAll('#info-display #telephone');
-
-                    phoneElements.forEach(function(phoneElement) {
-                        let phoneNumber = phoneElement.textContent.split(':')[1].trim();
-
-                        if (phoneNumber) {
-                            let formattedPhone = '+' + phoneNumber.replace(/(\d{2})(?=\d)/g, '$1 ');
-
+                    // Formater les numéros de téléphone dans le résultat affiché
+                    const telephoneElements = document.querySelectorAll('#info-display #telephone');
+                    telephoneElements.forEach(function(phoneElement) {
+                        let telephoneNumber = phoneElement.textContent.split(':')[1].trim();
+                        if (telephoneNumber) {
+                            let formattedPhone = '+' + telephoneNumber.replace(/(\d{2})(?=\d)/g, '$1 ');
                             phoneElement.textContent = 'Téléphone: ' + formattedPhone;
                         }
                     });
                 }
             };
-
             xhr.send();
         }
     </script>
-
-
 
 </body>
 </html>
