@@ -1,5 +1,5 @@
+<!DOCTYPE html>
 <html>
-
 
 <head>
     <meta charset="utf-8" />
@@ -10,37 +10,37 @@
 <body>
 
     <div class="row">
+        <!-- Colonne Choix -->
         <div class="col">
             <div>
-                <h1> Filtrage des annonces </h1>
+                <h1>Filtrage des annonces</h1>
                 <ul>
-                    <li> Type </li>
-                    <li> Prix </li>
-                    <li> Surface </li>
-                    <li> Colocation </li>
-                    <li> Proximité </li>
-                </ul> 
-            </div> 
+                    <li onclick="showInfo('type')">Type</li>
+                    <li onclick="showInfo('prix')">Prix</li>
+                    <li onclick="showInfo('surface')">Surface</li>
+                    <li onclick="showInfo('colocation')">Colocation</li>
+                    <li onclick="showInfo('proximite')">Proximité</li>
+                </ul>
+            </div>
             
             <div>
-                <h1> Contact </h1>
+                <h1>Contact</h1>
             </div>
 
             <div>
-                <h1> Carte intéractive de Limoges </h1>
-
+                <h1>Carte interactive de Limoges</h1>
             </div>
         </div>
-        <div class="col">
-        Donec auctor sodales nunc quis tristique. Pellentesque et sollicitudin nisl, sed blandit quam. Quisque tortor enim, blandit id congue eget, sagittis quis ligula. Aenean gravida sagittis ultrices. Duis in erat nec ligula laoreet faucibus.
+
+        <!-- Colonne Info -->
+        <div class="col" id="info-display">
+            <h2>Informations</h2>
+            <p>Cliquez sur un élément à gauche pour afficher les informations.</p>
         </div>
     </div>
 
-
-
+    <script src="script.js"></script>
 
 </body>
-
-
 
 </html>
