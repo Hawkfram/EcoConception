@@ -16,7 +16,7 @@
                 <ul>
                     <li onclick="showInfo('Mannonce')">Mon annonce</li>
                 </ul>
-                <h1>Annonces perçus</h1>
+                <h1>Annonces aperçus</h1>
                 <ul>
                     <li onclick="showInfo('Tannonce')">Annonce trouvé</li>
                 </ul>
