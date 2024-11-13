@@ -57,16 +57,20 @@ if (empty($annonces)) {
     echo "<p>Aucune annonce disponible selon vos critères.</p>";
 } else {
     foreach ($annonces as $annonce) {
-        echo '<ul>
-                <li>Nom: ' . htmlspecialchars($annonce['nom']) . '</li>
-                <li>Type: ' . htmlspecialchars($annonce['type']) . '</li>
-                <li>Prix: ' . htmlspecialchars($annonce['prix']) . ' €</li>
-                <li>Surface: ' . htmlspecialchars($annonce['surface']) . ' m²</li>
-                <li>Colocation: ' . htmlspecialchars($annonce['colocation']) . '</li>
-                <li>Proximité: ' . htmlspecialchars($annonce['proxi']) . '</li>
-                <li>Propriétaire: ' . htmlspecialchars($annonce['proprietaire']) . '</li>
-              </ul>';
-}
+        echo '<div class="col-annonce">
+                    <ul>
+                        <li>Nom: ' . htmlspecialchars($annonce['nom']) . '</li>
+                        <li>Type: ' . htmlspecialchars($annonce['type']) . '</li>
+                        <li>Prix: ' . htmlspecialchars($annonce['prix']) . ' €</li>
+                        <li>Surface: ' . htmlspecialchars($annonce['surface']) . ' m²</li>
+                        <li>Colocation: ' . ($annonce['colocation'] === 1 ? 'Oui' : 'Non') . '</li>
+                        <li>Proximité: ' . htmlspecialchars($annonce['proxi']) . '</li>
+                        <li>Propriétaire: ' . htmlspecialchars($annonce['proprietaire']) . '</li>
+                        <li>Contact: ' . htmlspecialchars($annonce['contact']) . '</li>
+                        <li>Téléphone: ' . htmlspecialchars($annonce['telephone']) . '</li>
+                    </ul>
+              </div>';
+    }    
 }
 
 Database::disconnect();
