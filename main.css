@@ -216,6 +216,19 @@ nav a.active {
   cursor: pointer;
 }
 
+.help-content > img {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.help-content > img:hover {
+  color: var(--color-primary);
+}
 /*
 * AUTHENTIFICATION CSS
 */
