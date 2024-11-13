@@ -26,23 +26,23 @@ body {
     gap: 20px;
 }
 
-.col h1 {
+.col-h1 {
     margin-top: 0;
 }
 
-.col ul {
+.col-ul {
     list-style-type: none;
     padding: 0;
 }
 
-.col ul li {
+.col-ul li {
     padding: 5px 0;
     cursor: pointer;
     color: red;
     text-decoration: underline;
 }
 
-.col ul li:hover {
+.col-ul li:hover {
     color: black;
 }
 
