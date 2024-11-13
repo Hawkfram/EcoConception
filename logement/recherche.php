@@ -8,7 +8,7 @@
 
 <body>
 
-    <div class="row">
+    <div class="row-left">
         <!-- Colonne Choix -->
         <div class="col">
             <div>
@@ -28,15 +28,7 @@
 
             <div>
                 <h1>Carte interactive de Limoges</h1>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
+             
                 <br>
             </div>
         </div>
@@ -56,8 +48,28 @@
 
             <!-- Colonne Infos -->
             <div class="col" id="info-display">
-                <h2>Informations</h2>
-                <p>Cliquez sur un des éléments à gauche pour afficher les informations.</p>
+                <?php
+                    require_once '../admin/database.php';
+                    $db = Database::connect();
+
+                    $statement = $db->query('SELECT * FROM m_annonce');
+                    $annonces = $statement->fetchAll();
+
+                    foreach($annonces as $annonce)
+                    {
+                        echo    '<ul>
+                                    <il>Nom: ' . $annonce['nom'] .'</li>
+                                    <il>Type: ' . $annonce['type'] .'</li>
+                                    <il>Prix: ' . $annonce['prix'] .'</li>
+                                    <il>Surface: ' . $annonce['surface'] .' m²</li>
+                                    <il>Colocation: ' . $annonce['colocation'] .'</li>
+                                    <il>Proximité: ' . $annonce['proxi'] .'</li>
+                                    <il>Propriètaire: ' . $annonce['proprietaire'] .'</li>
+                                </ul>';
+                    }
+                    
+                    Database::disconnect();
+                ?>
             </div>
         </div>
     </div>
