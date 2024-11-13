@@ -1,0 +1,37 @@
+nav {
+    position: fixed;
+    background-color: #8ce07b;
+    width: 100%;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: var(--color-background);
+}
+
+.align-horizontal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.align-horizontal > * {
+    padding: 8px;
+    flex: 1;
+    text-align: center;
+    min-width: 18%;
+}
+
+.nav-item-start > * {
+    text-align: start;
+}
+
+.nav-item-end > * {
+    text-align: end;
+}
