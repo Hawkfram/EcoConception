@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Mon annonces</title>
-    <link href="styles.css" rel="stylesheet" />
+    <link href="../main.css" rel="stylesheet" />
 </head>
 <?php include("../navbar.html"); ?>
 <body>
