@@ -10,7 +10,7 @@
 
     <div class="row-left">
         <!-- Colonne Choix -->
-        <div class="col">
+        <div class="col-filtrage">
             <h1>Filtrage des annonces</h1>
             <label for="sort">Trier par :</label>
             <select id="sort">
@@ -46,6 +46,7 @@
             </div>
         </div>
 
+
         <div class="col2">
             <!-- Colonne Barre -->
             <div class="col-nav">
@@ -61,11 +62,10 @@
 
             <!-- Colonne Infos -->
             <div class="col" id="info-display">
-                
+                <!-- Contenu dynamique ici -->
             </div>
-
-            
         </div>
+
     </div>
 
     <script>
@@ -80,12 +80,26 @@
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === 4 && xhr.status === 200) {
                     document.getElementById('info-display').innerHTML = xhr.responseText;
+
+                    const phoneElements = document.querySelectorAll('#info-display #telephone');
+
+                    phoneElements.forEach(function(phoneElement) {
+                        let phoneNumber = phoneElement.textContent.split(':')[1].trim();
+
+                        if (phoneNumber) {
+                            let formattedPhone = '+' + phoneNumber.replace(/(\d{2})(?=\d)/g, '$1 ');
+
+                            phoneElement.textContent = 'Téléphone: ' + formattedPhone;
+                        }
+                    });
                 }
             };
 
             xhr.send();
         }
     </script>
+
+
 
 </body>
 </html>
