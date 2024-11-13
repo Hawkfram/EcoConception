@@ -23,28 +23,6 @@
 
         <!-- Colonne Infos -->
         <div class="col" id="info-display">
-
-            <?php
-                require_once '../admin/database.php';
-                $db = Database::connect();
-
-                $statement = $db->query('SELECT * FROM m_annonce');
-                $annonces = $statement->fetchAll();
-
-                foreach($annonces as $annonce)
-                {
-                    echo    '<ul>
-                                <il>Nom: ' . $annonce['nom'] .'</li>
-                                <il>Type: ' . $annonce['type'] .'</li>
-                                <il>Prix: ' . $annonce['prix'] .'</li>
-                                <il>Surface: ' . $annonce['surface'] .' m²</li>
-                                <il>Colocation: ' . $annonce['colocation'] .'</li>
-                                <il>Proximité: ' . $annonce['proxi'] .'</li>
-                                <il>Propriètaire: ' . $annonce['proprietaire'] .'</li>';
-                }
-                
-                Database::disconnect();
-            ?>
         </div>
     </div>
     <script src="script.js"></script>
