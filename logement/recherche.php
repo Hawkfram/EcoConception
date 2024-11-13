@@ -1,34 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
     <meta charset="utf-8" />
     <title>Recherche d'annonces</title>
     <link href="styles.css" rel="stylesheet" />
 </head>
-
 <body>
 
     <div class="row-left">
         <!-- Colonne Choix -->
         <div class="col">
-            <div>
-                <h1>Filtrage des annonces</h1>
-                <ul>
-                    <li onclick="showInfo('type')">Type</li>
-                    <li onclick="showInfo('prix')">Prix</li>
-                    <li onclick="showInfo('surface')">Surface</li>
-                    <li onclick="showInfo('colocation')">Colocation</li>
-                    <li onclick="showInfo('proximite')">Proximité</li>
-                </ul>
-            </div>
-            
-            <div>
-                <h1 onclick="showFavoris('m')">Mes favoris</h1>
-            </div>
+            <h1>Filtrage des annonces</h1>
+            <label for="sort">Trier par :</label>
+            <select id="sort">
+                <option value="prix_asc">Prix (croissant)</option>
+                <option value="prix_desc">Prix (décroissant)</option>
+                <option value="surface_asc">Surface (croissant)</option>
+                <option value="surface_desc">Surface (décroissant)</option>
+                <option value="proxi_asc">Proximité (croissant)</option>
+                <option value="proxi_desc">Proximité (décroissant)</option>
+            </select>
+            <br>
+            <label for="type">Type de logement :</label>
+            <select id="type">
+                <option value="">Tous</option>
+                <option value="appartement">Appartement</option>
+                <option value="studio">Studio</option>
+                <option value="maison">Maison</option>
+            </select>
+            <br>
+            <label for="colocation">Colocation :</label>
+            <select id="colocation">
+                <option value="">Tous</option>
+                <option value="1">Oui</option>
+                <option value="0">Non</option>
+            </select>
+            <br>
+
+            <button onclick="fetchAnnonces()">Filtrer</button>
 
             <div>
                 <h1>Carte interactive de Limoges</h1>
-             
                 <br>
             </div>
         </div>
@@ -48,32 +60,29 @@
 
             <!-- Colonne Infos -->
             <div class="col" id="info-display">
-                <?php
-                    require_once '../admin/database.php';
-                    $db = Database::connect();
 
-                    $statement = $db->query('SELECT * FROM m_annonce');
-                    $annonces = $statement->fetchAll();
-
-                    foreach($annonces as $annonce)
-                    {
-                        echo    '<ul>
-                                    <il>Nom: ' . $annonce['nom'] .'</li>
-                                    <il>Type: ' . $annonce['type'] .'</li>
-                                    <il>Prix: ' . $annonce['prix'] .'</li>
-                                    <il>Surface: ' . $annonce['surface'] .' m²</li>
-                                    <il>Colocation: ' . $annonce['colocation'] .'</li>
-                                    <il>Proximité: ' . $annonce['proxi'] .'</li>
-                                    <il>Propriètaire: ' . $annonce['proprietaire'] .'</li>
-                                </ul>';
-                    }
-                    
-                    Database::disconnect();
-                ?>
             </div>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        function fetchAnnonces() {
+            const sortValue = document.getElementById('sort').value;
+            const typeValue = document.getElementById('type').value;
+            const colocationValue = document.getElementById('colocation').value;
+
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', `fetch_annonces.php?sort=${sortValue}&type=${typeValue}&colocation=${colocationValue}`, true);
+
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById('info-display').innerHTML = xhr.responseText;
+                }
+            };
+
+            xhr.send();
+        }
+    </script>
+
 </body>
 </html>
