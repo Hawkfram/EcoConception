@@ -5,7 +5,6 @@
     <title>Mon annonces</title>
     <link href="../main.css" rel="stylesheet" />
 </head>
-<?php include("../navbar.html"); ?>
 <body>
 
     <div class="col2">
