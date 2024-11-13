@@ -1,0 +1,15 @@
+/* 
+* PAGE AIDE
+*/
+.help-header {
+  width: 100%;
+  height: 50px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  background-color: var(--color-secondary);
+}
+
+.help-header h2 {
+  text-align: center;
+  width: 100%;
+}
