@@ -393,7 +393,19 @@ nav img {
   border-radius: 5px;
   background-color: var(--color-secondary); 
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); 
+  display: flex;
+  justify-content: space-between;  /* Si vous voulez un espacement égal entre les divs */
+  gap: 20px;  /* Optionnel : pour ajouter un espace entre les divs */
 }
+
+.col-left-column, .col-right-column {
+  flex: 1;  /* Chaque colonne prend une part égale de l'espace */
+}
+
+.col-annonce > div {
+  flex: 1;
+}
+
 .col-annonce ul {
   list-style-type: none;
   padding: 0;
