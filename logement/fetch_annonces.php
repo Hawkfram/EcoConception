@@ -67,7 +67,7 @@ if (empty($annonces)) {
                         <li>Proximité: ' . htmlspecialchars($annonce['proxi']) . '</li>
                         <li>Propriétaire: ' . htmlspecialchars($annonce['proprietaire']) . '</li>
                         <li>Contact: ' . htmlspecialchars($annonce['contact']) . '</li>
-                        <li>Téléphone: ' . htmlspecialchars($annonce['telephone']) . '</li>
+                        <li id="telephone">Téléphone: ' . htmlspecialchars($annonce['telephone']) . '</li>
                     </ul>
               </div>';
     }    
