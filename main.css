@@ -19,6 +19,38 @@ body {
 }
 
 /*
+* HEADER
+*/
+nav {
+  display: grid;
+  grid-template-columns: 200px auto 200px;
+  background-color: #8ce07b;
+  width: 100%;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 8px;
+}
+
+nav div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+nav div:nth-child(2) {
+  justify-content: center;
+}
+
+nav div:nth-child(2) p {
+  padding: 0px 20px;
+  user-select: none;
+  cursor: pointer;
+}
+
+nav img {
+  margin-left: 40px;
+}
+/*
 * PAGE GENERAL CSS
 */
 .help-header-container {
