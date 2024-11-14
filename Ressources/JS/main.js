@@ -60,3 +60,33 @@ if (btnSection != null) {
     });
   });
 }
+
+
+/*
+ * ANNONCE JS
+ */
+function fetchAnnonces() {
+  const sortValue = document.getElementById('sort').value;
+  const typeValue = document.getElementById('type').value;
+  const colocationValue = document.getElementById('colocation').value;
+
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', `fetch_annonces.php?sort=${sortValue}&type=${typeValue}&colocation=${colocationValue}`, true);
+
+  xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+          document.getElementById('info-display').innerHTML = xhr.responseText;
+
+          const telephoneElements = document.querySelectorAll('#info-display #telephone');
+
+          telephoneElements.forEach(function(phoneElement) {
+              let telephoneNumber = phoneElement.textContent.split(':')[1].trim();
+              if (telephoneNumber) {
+                  let formattedPhone = '+' + telephoneNumber.replace(/(\d{2})(?=\d)/g, '$1 ');
+                  phoneElement.textContent = 'Téléphone: ' + formattedPhone;
+              }
+          });
+      }
+  };
+  xhr.send();
+}
