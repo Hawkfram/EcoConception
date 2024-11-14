@@ -6,6 +6,23 @@
     <title>Créer une annonce de Logement</title>
     <link href="../main.css" rel="stylesheet" />
 </head>
+
+<nav>
+    <div>
+        <img src="../Ressources/Images/logo.png" height="90" width="100" />
+    </div>
+    <div>
+        <a href="../Views/PageAccueil.html">Accueil</a>
+        <a class="active">Logement</a>
+        <a href="../Views/PageTroc.html">Troc</a>
+        <a href="../Views/PageGeneral.html">Information</a>
+    </div>
+    <div>
+        <a href="PageAuth.html">Connexion</a>
+    </div>
+</nav>
+
+
 <body>
 
     <div class="logement-header">
