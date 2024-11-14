@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <link href="../main.css" rel="stylesheet" />
+  </head>
+  <body>
+    <a href="PageAccueil.html" id="back-home">Retour</a>
+
+    <main class="auth-container">
+      <div class="connexion-header">
+        <p class="active">CONNEXION</p>
+        <p>INSCRIPTION</p>
+      </div>
+      <form id="connexion-form" action="." method="POST">
+        <label for="email">Email :</label>
+        <input
+          type="text"
+          placeholder="Rentrez votre email"
+          name="email"
+          id="email"
+        />
+        <label for="password">Mot de passe :</label>
+        <input type="password" name="password" id="password" />
+        <input value="Connexion" type="submit" />
+      </form>
+
+      <form id="inscription-form" action="." method="POST">
+        <label for="emailI">Email :</label>
+        <input
+          type="text"
+          placeholder="Rentrez votre email"
+          name="emailI"
+          id="emailI"
+        />
+        <label for="passwordI">Mot de passe :</label>
+        <input type="password" name="passwordI" id="passwordI" />
+        <label for="passwordConfI">Confirmation : </label>
+        <input type="password" name="passwordConfI" id="passwordConfI" />
+        <input value="Inscription" type="submit" />
+      </form>
+    </main>
+
+    <script src="../Ressources/JS/main.js"></script>
+  </body>
+</html>

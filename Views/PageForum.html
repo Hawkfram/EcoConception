@@ -12,12 +12,13 @@
           <img src="../Ressources/Images/logo.png" height="90" width="100" />
         </div>
         <div>
-          <p>Logement</p>
-          <p>Troc</p>
-          <p>Information</p>
+          <a href="PageAccueil.html">Accueil</a>
+          <a href="../logement/monannonce.php">Logement</a>
+          <a href="PageTroc.html">Troc</a>
+          <a class="active">Information</a>
         </div>
         <div>
-          <p>Nom Prénom</p>
+          <a href="PageAuth.html">Connexion</a>
         </div>
       </nav>
     </header>
@@ -29,19 +30,46 @@
           <a class="active">Forum</a>
         </div>
         <div class="section-header">
-          <p>Conseil Pratiques</p>
-          <p>Transports</p>
-          <p>Administratif</p>
+          <p>Demande d'aide</p>
+          <p>Question</p>
+          <p>Débat</p>
           <p>Bon plan</p>
         </div>
       </div>
 
       <div class="help-content">
+        <img src="../Ressources/Images/add.svg" height="60px" width="60px" />
         <div class="help-sort-container">
           <p>Dernier</p>
           <p>Populaire</p>
         </div>
+
+        <div class="help-element">
+          <div>
+            <img
+              src="../Ressources/Images/star.svg"
+              type="text/svg"
+              width="30px"
+              height="30px"
+            />
+            <h2>Titre du topic</h2>
+            <p>dd/mm/yyyy</p>
+            <img
+              src="../Ressources/Images/arrow_down.svg"
+              type="text/svg"
+              width="30px"
+              height="30px"
+              class="plus-icon"
+            />
+          </div>
+          <div class="detail-section">
+            <p>Description rapide</p>
+            <button>Discuter</button>
+          </div>
+        </div>
       </div>
     </main>
+
+    <script src="../Ressources/JS/main.js"></script>
   </body>
 </html>
