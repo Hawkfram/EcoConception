@@ -50,6 +50,7 @@ nav div:nth-child(2) p {
 nav img {
   margin-left: 40px;
 }
+
 /*
 * PAGE GENERAL CSS
 */
@@ -194,4 +195,95 @@ nav img {
   margin-top: 0px;
   color: var(--color-primary);
   cursor: pointer;
+}
+
+/*
+  Profil CSS
+*/
+.main-container {
+  background-color: var(--color-background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.profil-container {
+  width: 60%;
+  margin: 20px;
+}
+
+.profil-form-container {
+  width: 100%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profil-form-container p {
+  font-weight: bold;
+  font-size: large;
+  color: var(--color-primary);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profil-form-container label {
+  margin-top: 10px;
+  font-weight: bold;
+  color: var(--color-text);
+}
+
+.profil-form-container input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid var(--color-text);
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.profil-form-container input:focus {
+    border-color: var(--color-accent);
+}
+
+.profil-form-container button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: var(--color-accent);
+    color: var(--color-background);
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.profil-form-container button:hover {
+    background-color: var(--color-primary);
+}
+
+.profil-fav-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+  width: 300px;
+  height: 300px;
+  align-items: center;
+}
+
+.fav-item {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
