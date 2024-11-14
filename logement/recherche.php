@@ -73,7 +73,7 @@
 
             <!-- Colonne Infos -->
             <div class="col" id="info-display">
-                <!-- Contenu dynamique ici -->
+                <!-- Contenu dynamique -->
             </div>
         </div>
 
@@ -93,11 +93,10 @@
 
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === 4 && xhr.status === 200) {
-                    // Effacer le contenu de la div info-display avant d'ajouter les annonces
                     document.getElementById('info-display').innerHTML = xhr.responseText;
 
-                    // Formater les numéros de téléphone dans le résultat affiché
                     const telephoneElements = document.querySelectorAll('#info-display #telephone');
+
                     telephoneElements.forEach(function(phoneElement) {
                         let telephoneNumber = phoneElement.textContent.split(':')[1].trim();
                         if (telephoneNumber) {
@@ -109,6 +108,7 @@
             };
             xhr.send();
         }
+
     </script>
 
 </body>
