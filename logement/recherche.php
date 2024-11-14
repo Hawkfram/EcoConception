@@ -18,7 +18,7 @@
         <a href="../Views/PageGeneral.html">Information</a>
     </div>
     <div>
-        <a href="PageAuth.html">Connexion</a>
+        <a href="../Views/PageAuth.html">Connexion</a>
     </div>
 </nav>
 
@@ -59,10 +59,7 @@
                 <option value="1">Oui</option>
                 <option value="0">Non</option>
             </select>
-            <br>
-
             <button onclick="fetchAnnonces()">Filtrer</button>
-            <br>
             <h1>Carte interactive de Limoges</h1>
             <button onclick="fetchMap()">Afficher la carte</button>
         </div>
