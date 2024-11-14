@@ -18,7 +18,7 @@
         <a href="../Views/PageGeneral.html">Information</a>
     </div>
     <div>
-        <a href="PageAuth.html">Connexion</a>
+        <a href="../Views/PageAuth.html">Connexion</a>
     </div>
 </nav>
 
